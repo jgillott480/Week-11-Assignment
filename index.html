@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <title>Tic-Tac-Toe Game</title>
+    <style>
+        
+        {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }        
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }        
+        .game-container {
+            text-align: center;
+        }        
+        .board {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-auto-rows: 100px;
+            grid-gap: 5px;
+            margin-top: 20px;
+        }        
+        .cell {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;
+            cursor: pointer;
+        }        
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+        }        
+        .winner-alert {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-top: 20px;
+        }        
+        .alert-success {
+            color: #155724;
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+        }        
+        .alert-info {
+            color: #0c5460;
+            background-color: #d1ecf1;
+            border-color: #bee5eb;
+        }
+    </style>
+</head>
+<body>
+    <!-- To center the game in the browser -->
+    <div class="game-container">
+        <h1>Tic-Tac-Toe Game</h1>
+        <!-- Game board grid -->
+        <div id="board" class="board">
+            <!-- The clickable cells to play the game -->
+            <div class="cell" onclick="playerMove(this)"></div>
+            <div class="cell" onclick="playerMove(this)"></div>
+            <div class="cell" onclick="playerMove(this)"></div>
+            <div class="cell" onclick="playerMove(this)"></div>
+            <div class="cell" onclick="playerMove(this)"></div>
+            <div class="cell" onclick="playerMove(this)"></div>
+            <div class="cell" onclick="playerMove(this)"></div>
+            <div class="cell" onclick="playerMove(this)"></div>
+            <div class="cell" onclick="playerMove(this)"></div>
+        </div>
+        <!-- Reset button to restart the game -->
+        <button onclick="resetGame()">Reset Game</button>
+        <!-- Container for displaying winner or draw messages -->
+        <div id="winnerAlert" class="winner-alert"></div>
+    </div>
+
+    
+    <script src="script.js"></script>
+</body>
+</html>
